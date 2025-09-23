@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rekayasa Perangkat Lunak (RPL)</title>
+<style>
+  .rpl-img{
+      width: 100%;
+    aspect-ratio: 1 / 1; /* kotak, bisa diganti 4/3 atau 16/9 */
+    object-fit: cover;   /* biar tidak melar */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    </style>
+  <!-- Bootstrap 5 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  
+  <header class="bg-secondary text-white py-4">
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+  <img class="rounded-circle me-2" src="image/logo.jpg" alt="Logo Sekolah" height="50">
+  <span class="fw-bold">SMK Al-Ma'arif Bumiayu</span>
+</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Pendaftaran</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Tentang Kita</a></li>
+          
+          
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
+    
+  </header>
+
+  <main class="container my-5" id="rpl-img">
+    <div class="container">
+      <h1 class="h2 mb-0">Rekayasa Perangkat Lunak</h1>
+      <p class="mb-0 small opacity-75">Informasi singkat tentang RPL (Rekognisi Pembelajaran Lampau)</p>
+    </div>
+    <div class="row g-4 align-items-center">
+      <!-- Gambar -->
+      <div class="col-12 col-md-5">
+        <figure class="figure">
+          <img src="galeri/WhatsApp Image 2025-09-22 at 11.26.09.jpeg" class="figure-img img-fluid rounded" alt="Ilustrasi RPL">
+        </figure>
+      </div>
+
+      <!-- Deskripsi -->
+      <div class="col-12 col-md-7">
+        <article>
+          <p class="lead">
+            RPL adalah <strong>Rekognisi Pembelajaran Lampau</strong>, suatu sistem pengakuan atas
+            Capaian Pembelajaran (CP) yang dimiliki seseorang dari pendidikan formal, nonformal,
+            informal, dan/atau pengalaman kerja, sebagai dasar untuk melanjutkan pendidikan formal
+            atau penyetaraan kualifikasi.
+          </p>
+
+          <p>
+            Hal-hal mendasar dalam Rekayasa Perangkat Lunak (RPL) meliputi pemahaman tentang
+            pemrograman (coding), logika algoritma, dan desain perangkat lunak.
+          </p>
+        </article>
+      </div>
+    </div>
+
+    <section class="mt-5">
+      <h2 class="h5">Informasi Umum</h2>
+
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <ul class="list-group">
+            <li class="list-group-item">Rekayasa Perangkat Lunak (Software Engineering)</li>
+            <li class="list-group-item">Rekognisi Pembelajaran Lampau (RPL)</li>
+            <li class="list-group-item">Mengembangkan dan memelihara perangkat lunak secara sistematis</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h3 class="h6 card-title">Catatan singkat</h3>
+              <p class="card-text mb-0">
+                Untuk materi lebih lanjut: fokus pada algoritma, struktur data, design pattern,
+                testing, dan praktik manajemen proyek perangkat lunak (mis. Agile, Scrum).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-light py-3 mt-auto">
+    <div class="container text-center small">
+      &copy; <span id="year"></span> RPL · Semua hak cipta
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS (bundle includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

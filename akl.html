@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akuntansi dan Keuangan Lembaga</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .jurusan-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img class="rounded-circle me-2" src="image/logo.jpg" alt="Logo Sekolah" height="50">
+        <span class="fw-bold">SMK Al-Ma'arif Bumiayu</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Pendaftaran</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Tentang Kita</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Konten utama -->
+  <main class="container py-5 mt-5">
+    <div class="row g-4 align-items-center">
+      <!-- Gambar -->
+      <div class="col-12 col-md-5">
+        <img src="akl.jpeg" class="img-fluid jurusan-img" alt="Gambar AKL">
+      </div>
+
+      <!-- Teks -->
+      <div class="col-12 col-md-7">
+        <h1 class="fw-bold mb-3">Akuntansi dan Keuangan Lembaga (AKL)</h1>
+        <p>
+          <strong>Akuntansi dan Keuangan Lembaga</strong> adalah jurusan di Sekolah Menengah Kejuruan (SMK) 
+          yang fokus pada pencatatan, penggolongan, dan penyusunan laporan keuangan secara manual maupun 
+          menggunakan sistem komputerisasi untuk berbagai jenis lembaga atau organisasi.
+        </p>
+        <p>
+          Materi meliputi prinsip akuntansi seperti prinsip biaya historis dan pengakuan pendapatan, 
+          serta siklus akuntansi mulai dari transaksi hingga laporan keuangan.
+        </p>
+      </div>
+    </div>
+
+    <!-- Informasi Umum -->
+   
+    <section class="mt-5">
+      <h2 class="h5">Informasi Umum</h2>
+
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <ul class="list-group">
+            <li class="list-group-item">Aplikasi Pengolah Angka & Konpoter Akutansi</li>
+            <li class="list-group-item">Manajemen Keuangan</li>
+            <li class="list-group-item">Sektor Pemerintahan</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h3 class="h6 card-title">Catatan singkat</h3>
+              <p class="card-text mb-0">
+                Untuk materi lebih lanjut: fokus pada keugangan lembaga, akuntansi keugangan, audit, perpajakan, dan komputer Akutansi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    <div class="container small">
+      &copy; <span id="year"></span> Salman Al-Farisi. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // tampilkan tahun sekarang otomatis di footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
