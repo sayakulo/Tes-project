@@ -7,72 +7,97 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
-    header h1 {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(0,0,0,0.5);
-      color: #fff;
-      padding: 15px 30px;
-      border-radius: 10px;
-	 
-	  
+    /* Navbar responsif */
+    @media (max-width: 991px) {
+      .navbar-nav .nav-link {
+        padding: 10px 0;
+        text-align: center;
+      }
     }
-    .jurusan-img{
+
+    /* Carousel */
+    .carousel-item img {
+      height: 100vh;
+      object-fit: cover;
+    }
+    @media (max-width: 768px) {
+      .carousel-item img {
+        height: 60vh;
+      }
+    }
+
+    /* Card Jurusan */
+    .jurusan-img {
       width: 100%;
-    aspect-ratio: 1 / 1; /* kotak, bisa diganti 4/3 atau 16/9 */
-    object-fit: cover;   /* biar tidak melar */
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
-    
-      .ekstrakurikuler-img {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        border-radius: 8px 8px 0 0;
-      }
 
-      .ekstrakurikuler-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-radius: 12px;
-      }
+    /* Card Ekstrakurikuler */
+    .ekstrakurikuler-img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+    }
+    .ekstrakurikuler-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+    }
+    .ekstrakurikuler-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
 
-      .ekstrakurikuler-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-      }
-    
+    /* Lokasi (Google Maps) */
+    .ratio iframe {
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    :root {
+  --primary-color: #00d312; /* biru Bootstrap */
+  --secondary-color: #ffc107; /* kuning */
+}
+h2 {
+  color: var(--primary-color);
+}
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
   </style>
 </head>
 <body>
-<a href="#home" class="btn btn-primary btn-lg rounded-circle shadow position-fixed" 
-   style="bottom: 20px; right: 20px; z-index: 1050;">
-   <img src="galeri/panah.png" alt="Back to Top" width="30" height="30">
-  <i class="bi bi-arrow-up"></i>
-</a>
+  <!-- Tombol Back to Top -->
+  <a href="#home" class="btn btn-primary btn-lg rounded-circle shadow position-fixed d-flex align-items-center justify-content-center"
+     style="bottom: 20px; right: 20px; z-index: 1050; width: 55px; height: 55px;">
+     <i class="bi bi-arrow-up fs-3"></i>
+  </a>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
-  <img class="rounded-circle me-2" src="image/logo.jpg" alt="Logo Sekolah" height="50">
-  <span class="fw-bold">SMK Al-Ma'arif Bumiayu</span>
-</a>
+        <img class="rounded-circle me-2" src="image/logo.jpg" alt="Logo Sekolah" height="50">
+        <span class="fw-bold">SMK Al-Ma'arif Bumiayu</span>
+      </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav fw-semibold">
           <li class="nav-item"><a class="nav-link" href="#home">Tentang Kita</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Pendaftaran</a></li>
+          <li class="nav-item"><a class="nav-link" href="pendaftaran.html">Pendaftaran</a></li>
           <li class="nav-item"><a class="nav-link" href="#ekstrakurikuler">Ekstrakurikuler</a></li>
           <li class="nav-item"><a class="nav-link" href="loginsiswa.html">Log In Siswa</a></li>
-          <li class="nav-item"><a class="nav-link" href="galeri.html">Galery Sekolah</a></li>
+          <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri Sekolah</a></li>
           <li class="nav-item"><a class="nav-link" href="#jurusan">Jurusan</a></li>
         </ul>
       </div>
@@ -80,191 +105,162 @@
   </nav>
 
   <!-- Header dengan Carousel -->
-  
-   <header>
-  <div id="home" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="image/IMG_20250817_085547_017.jpg" class="d-block w-100" alt="Slide 1" style="height:100vh; object-fit:cover;">
-      </div>
-      <div class="carousel-item">
-        <img src="image/IMG_20250817_085608_775.jpg" class="d-block w-100" alt="Slide 2" style="height:100vh; object-fit:cover;">
-      </div>
-      <div class="carousel-item">
-        <img src="image/IMG_20250817_085733_670.jpg" class="d-block w-100" alt="Slide 3" style="height:100vh; object-fit:cover;">
-      </div>
-	  <div class="carousel-item">
-        <img src="image/IMG_20250817_090646_657.jpg" class="d-block w-100" alt="Slide 3" style="height:100vh; object-fit:cover;">
-      </div>
-	  <div class="carousel-item">
-        <img src="image/IMG_20250817_090648_709.jpg" class="d-block w-100" alt="Slide 3" style="height:100vh; object-fit:cover;">
-      </div>
-    </div>
-  </div>
- <div class="position-absolute top-50 start-50 translate-middle w-100 text-center">
-  <h1 class="fw-bold text-white display-4 bg-dark bg-opacity-50 py-3 m-0">
-    PENERIMAAN SISWA BARU <br> SMK AL-MA'ARIF BUMIAYU
-  </h1>
-</div>
-
-
-</header>
-
-
-  <!-- Body -->
-  <section class="container py-5 fs-5" id="home" data-aos="fade-up">
-  <div class="text-center mb-5" data-aos="zoom-in">
-    <h2 class="fw-bold">Selamat Datang di SMK Al-Ma'arif Bumiayu</h2>
-    <p class="text-muted">Mewujudkan Generasi Unggul dan Berakhlak Mulia</p> 
-  </div>
-  <div class="p-4 rounded" style="background-image: url('image/bgsekolah.jpg'); background-size: cover;" data-aos="fade-right">
-    <h2 class="text-start mb-4">Kenapa Harus Di SMK-Al'Ma'arif Bumiayu?</h2>
-    <ul class="text-start mb-4">
-      <li>Kualitas Pendidikan Terjamin</li>
-      <li>Fasilitas Lengkap dan Modern</li>
-      <li>Guru Profesional dan Berpengalaman</li>
-      <li>Kurikulum Sesuai Kebutuhan Industri</li>
-      <li>Peluang Magang dan Kerja</li>
-      <li>Komunitas Siswa yang Aktif dan Kreatif</li>
-      <li>Lokasi Strategis dan Akses Mudah</li>
-      <li>Dukungan Pengembangan Diri</li>
-    </ul>
-  </div>
- 
-</section>
-
-    <!-- Jurusan -->
-   <section class="container my-5">
-  <h2 class="text-center mb-4" id="jurusan">Jurusan</h2>
-  <p class="text-center mb-4">SMK Al-Ma'arif Memiliki Jurusan</p>
-
-  <div class="row justify-content-center g-4">
-
-    <!-- RPL -->
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card h-100 text-center shadow-sm">
-        <a href="rpl.html">
-          <img src="galeri/rpl.jpg" class="card-img-top img-fluid jurusan-img" alt="RPL">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">RPL</h5>
-          <p class="card-text">Rekayasa Perangkat Lunak</p>
+  <header>
+    <div id="home" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="image/IMG_20250817_085547_017.jpg" class="d-block w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img src="image/IMG_20250817_085608_775.jpg" class="d-block w-100" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img src="image/IMG_20250817_085733_670.jpg" class="d-block w-100" alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+          <img src="image/IMG_20250817_090646_657.jpg" class="d-block w-100" alt="Slide 4">
+        </div>
+        <div class="carousel-item">
+          <img src="image/IMG_20250817_090648_709.jpg" class="d-block w-100" alt="Slide 5">
         </div>
       </div>
     </div>
+    <div class="position-absolute top-50 start-50 translate-middle w-100 text-center">
+      <h1 class="fw-bold text-white display-4 bg-dark bg-opacity-50 py-3 m-0" data-aos="fade-down">
+        PENERIMAAN SISWA BARU <br> SMK AL-MA'ARIF BUMIAYU
+      </h1>
+    </div>
+  </header>
 
-    <!-- AKL -->
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card h-100 text-center shadow-sm">
-        <a href="akl.html">
-          <img src="galeri/akl.jpeg" class="card-img-top img-fluid jurusan-img" alt="AKL">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">AKL</h5>
-          <p class="card-text">Akuntansi dan Keuangan Lembaga</p>
+  <!-- Tentang Kita -->
+  <section class="container py-5 fs-5" data-aos="fade-up">
+    <div class="text-center mb-5" data-aos="zoom-in">
+      <h2 class="fw-bold">Selamat Datang di SMK Al-Ma'arif Bumiayu</h2>
+      <p class="text-muted">Mewujudkan Generasi Unggul dan Berakhlak Mulia</p> 
+    </div>
+    <div class="p-4 rounded bg-overlay" 
+         style="background-image: url('image/bgsekolah.jpg'); background-size: cover; background-position: center;" 
+         data-aos="fade-right">
+      <h2 class="text-start mb-4">Kenapa Harus di SMK Al-Ma'arif Bumiayu?</h2>
+      <ul class="text-start mb-4">
+        <li>Kualitas Pendidikan Terjamin</li>
+        <li>Fasilitas Lengkap dan Modern</li>
+        <li>Guru Profesional dan Berpengalaman</li>
+        <li>Kurikulum Sesuai Kebutuhan Industri</li>
+        <li>Peluang Magang dan Kerja</li>
+        <li>Komunitas Siswa yang Aktif dan Kreatif</li>
+        <li>Lokasi Strategis dan Akses Mudah</li>
+        <li>Dukungan Pengembangan Diri</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Jurusan -->
+  <section class="container my-5" id="jurusan">
+    <h2 class="text-center mb-4" data-aos="fade-up">Jurusan</h2>
+    <p class="text-center mb-4" data-aos="fade-up">SMK Al-Ma'arif Memiliki Jurusan</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+      <div class="col" data-aos="fade-up" data-aos-delay="0">
+        <div class="card h-100 text-center shadow-sm">
+          <a href="rpl.html">
+            <img src="galeri/rpl.jpg" class="card-img-top img-fluid jurusan-img" alt="RPL">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">RPL</h5>
+            <p class="card-text">Rekayasa Perangkat Lunak</p>
+          </div>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 text-center shadow-sm">
+          <a href="akl.html">
+            <img src="galeri/akl.jpeg" class="card-img-top img-fluid jurusan-img" alt="AKL">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">AKL</h5>
+            <p class="card-text">Akuntansi dan Keuangan Lembaga</p>
+          </div>
+        </div>
+      </div>
+      <div class="col" data-aos="fade-up" data-aos-delay="200">
+        <div class="card h-100 text-center shadow-sm">
+          <a href="tsm.html">
+            <img src="galeri/tsm.jpg" class="card-img-top img-fluid jurusan-img" alt="TSM">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">TSM</h5>
+            <p class="card-text">Teknik Sepeda Motor</p>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- TSM -->
-    <div class="col-12 col-sm-6 col-md-4">
-      <div class="card h-100 text-center shadow-sm">
-        <a href="tsm.html">
-          <img src="galeri/tsm.jpg" class="card-img-top img-fluid jurusan-img" alt="TSM">
-        </a>
-        <div class="card-body">
-          <h5 class="card-title">TSM</h5>
-          <p class="card-text">Teknik Sepeda Motor</p>
+  <!-- Ekstrakurikuler -->
+  <section class="container my-5" id="ekstrakurikuler">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" data-aos="fade-up">Ekstrakurikuler</h2>
+      <p class="text-muted" data-aos="fade-up">Kegiatan untuk mengasah bakat, disiplin, dan kreativitas siswa</p>
+      <hr class="mx-auto" style="width: 80px; height: 3px; background-color: #0d6efd; border: none; border-radius: 5px;">
+    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <div class="col" data-aos="zoom-in" data-aos-delay="0">
+        <div class="card h-100 text-center shadow-sm ekstrakurikuler-card">
+          <img src="galeri/hadroh.jpeg" class="card-img-top ekstrakurikuler-img" alt="Hadroh">
+          <div class="card-body">
+            <h5 class="card-title">Hadroh</h5>
+            <p class="card-text text-muted small">Melatih seni musik Islami dengan rebana dan vokal.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col" data-aos="zoom-in" data-aos-delay="100">
+        <div class="card h-100 text-center shadow-sm ekstrakurikuler-card">
+          <img src="galeri/WhatsApp Image 2025-09-22 at 08.23.15.jpeg" class="card-img-top ekstrakurikuler-img" alt="Paskibra">
+          <div class="card-body">
+            <h5 class="card-title">Paskibra</h5>
+            <p class="card-text text-muted small">Mendidik kedisiplinan, kepemimpinan, dan semangat kebangsaan.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card h-100 text-center shadow-sm ekstrakurikuler-card">
+          <img src="galeri/futsal.jpeg" class="card-img-top ekstrakurikuler-img" alt="Futsal">
+          <div class="card-body">
+            <h5 class="card-title">Futsal</h5>
+            <p class="card-text text-muted small">Menyalurkan hobi olahraga, membangun kerja sama tim.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col" data-aos="zoom-in" data-aos-delay="300">
+        <div class="card h-100 text-center shadow-sm ekstrakurikuler-card">
+          <img src="galeri/marchingband.jpeg" class="card-img-top ekstrakurikuler-img" alt="Marching Band">
+          <div class="card-body">
+            <h5 class="card-title">Marching Band</h5>
+            <p class="card-text text-muted small">Melatih keterampilan musik, kekompakan, dan kedisiplinan.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col" data-aos="zoom-in" data-aos-delay="400">
+        <div class="card h-100 text-center  shadow-sm ekstrakurikuler-card">
+          <img src="galeri/pramuka.jpeg" class="card-img-top ekstrakurikuler-img" alt="Pramuka">
+          <div class="card-body">
+            <h5 class="card-title">Pramuka</h5>
+            <p class="card-text text-muted small">Membangun jiwa kepemimpinan, solidaritas, dan cinta alam.</p>
+          </div>
         </div>
       </div>
     </div>
-
-  </div>
-</section>
-
-
-        <!-- Ekstrakurikuler -->
-    <section class="container my-5" id="ekstrakurikuler" data-aos="fade-up">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold">Ekstrakurikuler</h2>
-        <p class="text-muted">Kegiatan untuk mengasah bakat, disiplin, dan kreativitas siswa</p>
-        <hr class="mx-auto" style="width: 80px; height: 3px; background-color: #0d6efd; border: none; border-radius: 5px;">
-      </div>
-
-      <div class="row justify-content-center g-4">
-
-        <!-- Hadroh -->
-        <div class="col-12 col-sm-6 col-md-3" data-aos="zoom-in">
-          <div class="card h-100 text-center shadow-sm ekstrakurikuler-card">
-            <img src="galeri/hadroh.jpeg" class="card-img-top ekstrakurikuler-img" alt="Hadroh">
-            <div class="card-body">
-              <h5 class="card-title">Hadroh</h5>
-              <p class="card-text text-muted small">Melatih seni musik Islami dengan rebana dan vokal.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Paskibra -->
-        <div class="col-12 col-sm-6 col-md-3" data-aos="zoom-in" data-aos-delay="100">
-          <div class="card h-100 text-center shadow-sm ekstrakurikuler-card">
-            <img src="galeri/WhatsApp Image 2025-09-22 at 08.23.15.jpeg" class="card-img-top ekstrakurikuler-img" alt="Paskibra">
-            <div class="card-body">
-              <h5 class="card-title">Paskibra</h5>
-              <p class="card-text text-muted small">Mendidik kedisiplinan, kepemimpinan, dan semangat kebangsaan.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Futsal -->
-        <div class="col-12 col-sm-6 col-md-3" data-aos="zoom-in" data-aos-delay="200">
-          <div class="card h-100 text-center shadow-sm ekstrakurikuler-card">
-            <img src="galeri/futsal.jpeg" class="card-img-top ekstrakurikuler-img" alt="Futsal">
-            <div class="card-body">
-              <h5 class="card-title">Futsal</h5>
-              <p class="card-text text-muted small">Menyalurkan hobi olahraga, membangun kerja sama tim.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Marching Band -->
-        <div class="col-12 col-sm-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
-          <div class="card h-100 text-center shadow-sm ekstrakurikuler-card">
-            <img src="galeri/marchingband.jpeg" class="card-img-top ekstrakurikuler-img" alt="Marching Band">
-            <div class="card-body">
-              <h5 class="card-title">Marching Band</h5>
-              <p class="card-text text-muted small">Melatih keterampilan musik, kekompakan, dan kedisiplinan.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Pramuka -->
-        
-        <div class="col-12 col-sm-6 col-md-3" data-aos="zoom-in" data-aos-delay="300">
-          <div class="card h-100 text-center shadow-sm ekstrakurikuler-card">
-            <img src="galeri/pramuka.jpeg" class="card-img-top ekstrakurikuler-img" alt="Marching Band">
-            <div class="card-body">
-              <h5 class="card-title">Marching Band</h5>
-              <p class="card-text text-muted small">Melatih keterampilan musik, kekompakan, dan kedisiplinan.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  </section>
 
   <!-- Lokasi -->
-  <section class="container my-5" id="lokasi" data-aos="fade-up">
-    <h2 class="text-center mb-4">Lokasi Sekolah</h2>
+  <section class="container my-5" id="lokasi">
+    <h2 class="text-center mb-4" data-aos="fade-right">Lokasi Sekolah</h2>
     <p class="text-center mb-4">Temukan lokasi SMK Al-Ma'arif Bumiayu di Google Maps</p>
     <div class="row justify-content-center">
-      <div class="col-md-10">
+      <div class="col-md-10" data-aos="fade-up">
         <div class="ratio ratio-16x9 shadow rounded">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.4510436900416!2d108.98609458940373!3d-7.263113867766038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f858d50ee8aa3%3A0x65a26341c5e931d6!2sSMK%20AL-MA&#39;ARIF%20BUMIAYU!5e0!3m2!1sid!2sid!4v1758678911390!5m2!1sid!2sid" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d989.4510436900416!2d108.98609458940373!3d-7.263113867766038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f858d50ee8aa3%3A0x65a26341c5e931d6!2sSMK%20AL-MA&#39;ARIF%20BUMIAYU!5e0!3m2!1sid!2sid!4v1758678911390!5m2!1sid!2sid"
+                  style="border:0;" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
     </div>
@@ -275,50 +271,28 @@
     <p>Copyright © 2025 Muhammad Zaefi Firdan Abibi,S.Kom</p>
   </footer>
 
-  <!-- Bootstrap JS -->
-
-      <!-- Script fallback untuk semua gambar -->
-       <!-- Bootstrap Bundle JS (sudah termasuk Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
+    AOS.init({
+      duration: 1000,
+      once: false
+    });
+
+    // Lazy load + fallback image
     document.querySelectorAll("img").forEach(img => {
-      const fallback = "image/fallback.jpg"; // ganti dengan gambar defaultmu
+      const fallback = "image/fallback.jpg";
       const timeout = setTimeout(() => {
         if (!img.complete || img.naturalWidth === 0) {
           img.src = fallback;
         }
-      }, 10000); // timeout 5 detik
-
-      img.onerror = () => {
-        img.onerror = null;
-        img.src = fallback;
-      };
-
+      }, 8000);
+      img.onerror = () => { img.src = fallback; };
       img.onload = () => clearTimeout(timeout);
-
-      // Tambahkan lazy loading otomatis
       img.setAttribute("loading", "lazy");
       img.setAttribute("decoding", "async");
     });
   </script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000, // durasi animasi 1 detik
-    once: false,    // animasi bisa jalan tiap kali section masuk/keluar
-  });
-  //esktrakurikuler
- 
-</script>
-
-  
 </body>
 </html>
-
-
-
-
-
-
-
